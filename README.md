@@ -1,6 +1,6 @@
 # Chosen.touch
 
-Chosen.touch is a fork of the [Chosen](https://github.com/harvesthq/chosen/) library that triggers native UI select pickers on touch based devices while maintaing the Chosen styles for the input itself. 
+Chosen.touch is a fork of the [Chosen](https://github.com/harvesthq/chosen/) library that triggers native UI select pickers on touch based devices while maintaining Chosen styles for the input itself. 
 
 Chosen.touch behaves just like Chosen on non-touch devices. 
 
