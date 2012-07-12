@@ -33,6 +33,8 @@ class AbstractChosen
     @choices = 0
     @single_backstroke_delete = @options.single_backstroke_delete || false
     @max_selected_options = @options.max_selected_options || Infinity
+    # @mobile = @options.mobile || false
+    @is_touch = if @options.touch and navigator.userAgent.toLowerCase().match(/(iphone|ipod|ipad|android)/) then @is_touch = true else @is_touch = false
 
   set_default_text: ->
     if @form_field.getAttribute("data-placeholder")

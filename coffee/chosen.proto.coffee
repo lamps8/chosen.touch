@@ -44,6 +44,10 @@ class Chosen extends AbstractChosen
     
     @dropdown.setStyle({"width": dd_width  + "px", "top": dd_top + "px"})
 
+    if @is_touch
+      @form_field.setStyle({"position": "absolute","height":dd_top+"px",	"z-index":"499","opacity":"0","display":"block"})
+
+
     @search_field = @container.down('input')
     @search_results = @container.down('ul.chzn-results')
     this.search_field_scale()
@@ -74,6 +78,8 @@ class Chosen extends AbstractChosen
     @search_results.observe "mouseout", (evt) => this.search_results_mouseout(evt)
     
     @form_field.observe "liszt:updated", (evt) => this.results_update_field(evt)
+    if @is_touch
+      @form_field.observe "change", (evt) => this.results_update_field(evt);
 
     @search_field.observe "blur", (evt) => this.input_blur(evt)
     @search_field.observe "keyup", (evt) => this.keyup_checker(evt)

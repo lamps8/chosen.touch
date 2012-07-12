@@ -26,6 +26,7 @@ class Chosen extends AbstractChosen
     @form_field_jq.addClass "chzn-done"
 
   set_up_html: ->
+	
     @container_id = if @form_field.id.length then @form_field.id.replace(/[^\w]/g, '_') else this.generate_field_id()
     @container_id += "_chzn"
 
@@ -51,7 +52,10 @@ class Chosen extends AbstractChosen
     dd_width = (@f_width - get_side_border_padding(@dropdown))
 
     @dropdown.css({"width": dd_width  + "px", "top": dd_top + "px"})
-
+    
+    if @is_touch
+      @form_field_jq.css({"position": "absolute","height":this.container.height()+"px",	"z-index":"499","opacity":"0","display":"block"})
+	
     @search_field = @container.find('input').first()
     @search_results = @container.find('ul.chzn-results').first()
     this.search_field_scale()
@@ -82,6 +86,9 @@ class Chosen extends AbstractChosen
     @search_results.mouseout (evt) => this.search_results_mouseout(evt)
 
     @form_field_jq.bind "liszt:updated", (evt) => this.results_update_field(evt)
+    if @is_touch
+      @form_field_jq.change (evt) => this.results_update_field(evt);
+
 
     @search_field.blur (evt) => this.input_blur(evt)
     @search_field.keyup (evt) => this.keyup_checker(evt)
@@ -358,7 +365,7 @@ class Chosen extends AbstractChosen
         this.choice_build item
       else
         @selected_item.find("span").first().text item.text
-        this.single_deselect_control_build() if @allow_single_deselect
+        this.single_deselect_control_build() if @allow_single_deselect 
 
       this.results_hide() unless evt.metaKey and @is_multiple
 
@@ -557,6 +564,8 @@ class Chosen extends AbstractChosen
 
       dd_top = @container.height()
       @dropdown.css({"top":  dd_top + "px"})
+
+	
 
   generate_random_id: ->
     string = "sel" + this.generate_random_char() + this.generate_random_char() + this.generate_random_char()

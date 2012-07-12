@@ -1,47 +1,32 @@
-# Chosen
+# Chosen.touch
 
-Chosen is a library for making long, unwieldy select boxes more user friendly.
+Chosen.touch is a fork of the [Chosen](https://github.com/harvesthq/chosen/) library that triggers native UI select pickers on touch based devices while maintaing the Chosen styles for the input itself. 
+
+Chosen.touch behaves just like Chosen on non-touch devices. 
 
 - jQuery support: 1.4+
 - Prototype support: 1.7+
 
-For documentation, usage, and examples, see:  
-http://harvesthq.github.com/chosen
+### Usage
 
-### Contributing to Chosen
-
-Contributions and pull requests are very welcome. Please follow these guidelines when submitting new code.
-
-1. Make all changes in Coffeescript files, **not** JavaScript files.
-2. For feature changes, update both jQuery *and* Prototype versions
-3. Use `npm install -d` to install the correct development dependencies.
-4. Use `cake build` or `cake watch` to generate Chosen's JavaScript file and minified version.
-5. Don't touch the `VERSION` file
-6. Submit a Pull Request using GitHub.
-
-### Using CoffeeScript & Cake
-
-First, make sure you have the proper CoffeeScript / Cake set-up in place. We have added a package.json that makes this easy:
+jQuery:
 
 ```
-npm install -d
+$(".chzn-select").chosen({touch:true})
 ```
 
-This will install `coffee-script` and `uglifyjs`.
+Prototype:
 
-Once you're configured, building the JavasScript from the command line is easy:
+```
+new Chosen(some_form_field,{touch:true});
+```
 
-    cake build                # build Chosen from source
-    cake watch                # watch coffee/ for changes and build Chosen
-    
-If you're interested, you can find the recipes in Cakefile.
+### Credits
 
-
-### Chosen Credits
-
-- Built by [Harvest](http://www.getharvest.com/). Want to work on projects like this? [We’re hiring](http://www.getharvest.com/careers)!
+- Built by [Harvest](http://www.getharvest.com/). 
 - Concept and development by [Patrick Filler](http://www.patrickfiller.com/)
 - Design and CSS by [Matthew Lettini](http://matthewlettini.com/)
+- Chosen.touch fork by [Ben Markowitz](http://www.benmarkowitz.com)
 
 ### Notable Forks
 
