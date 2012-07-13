@@ -26,7 +26,7 @@ new Chosen(some_form_field,{touch:true});
 - Design and CSS by [Matthew Lettini](http://matthewlettini.com/)
 - Chosen.touch fork by [Ben Markowitz](http://www.benmarkowitz.com)
 
-### Notable Forks
+### Other Forks
 
 - [Chosen for MooTools](https://github.com/julesjanssen/chosen), by Jules Janssen
 - [Chosen Drupal 7 Module](http://drupal.org/project/chosen), by Pol Dell'Aiera, Arshad Chummun, Bart Feenstra, Kálmán Hosszu, etc.
