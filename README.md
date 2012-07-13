@@ -5,6 +5,8 @@ Chosen.touch is a fork of the [Chosen](https://github.com/harvesthq/chosen/) lib
 - jQuery support: 1.4+
 - Prototype support: 1.7+
 
+I have also included a retina friendly version of the sprite for extra hotness on high density displays. The retina image is triggered by media queries, so there is no setup required.
+
 ### Usage
 
 jQuery:
