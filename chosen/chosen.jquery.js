@@ -360,7 +360,9 @@ Copyright (c) 2011 by Harvest
           "height": this.container.height() + "px",
           "z-index": "499",
           "opacity": "0",
-          "display": "block"
+          "display": "block",
+          "zoom": "1",
+          "filter": "alpha(opacity=0)"
         });
       }
       this.search_field = this.container.find('input').first();

@@ -45,7 +45,7 @@ class Chosen extends AbstractChosen
     @dropdown.setStyle({"width": dd_width  + "px", "top": dd_top + "px"})
 
     if @is_touch
-      @form_field.setStyle({"position": "absolute","height":dd_top+"px",	"z-index":"499","opacity":"0","display":"block"})
+      @form_field.setStyle({"position": "absolute","height":dd_top+"px","z-index":"499","opacity":"0","display":"block","zoom":"1","filter":"alpha(opacity=0)";})
 
 
     @search_field = @container.down('input')

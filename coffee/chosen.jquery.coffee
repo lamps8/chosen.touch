@@ -54,7 +54,7 @@ class Chosen extends AbstractChosen
     @dropdown.css({"width": dd_width  + "px", "top": dd_top + "px"})
     
     if @is_touch
-      @form_field_jq.css({"position": "absolute","height":this.container.height()+"px",	"z-index":"499","opacity":"0","display":"block"})
+      @form_field_jq.css({"position": "absolute","height":this.container.height()+"px",	"z-index":"499","opacity":"0","display":"block","zoom":"1","filter":"alpha(opacity=0)";})
 	
     @search_field = @container.find('input').first()
     @search_results = @container.find('ul.chzn-results').first()
